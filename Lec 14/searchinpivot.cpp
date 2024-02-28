@@ -55,10 +55,10 @@ bool SearchPivot(int *arr, int size, int key)
 }
 int main()
 {
-    int arr[] = {17, 18, 19, 20, 1, 2, 2, 3};
+    int arr[] = {1};
     int size = sizeof(arr) / sizeof(arr[0]);
 
-    int key = 18;
+    int key = 1;
     bool found = SearchPivot(arr, size, key);
     if (found)
     {

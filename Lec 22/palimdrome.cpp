@@ -9,7 +9,6 @@ bool valid(char ch)
     }
     return 0;
 }
-
 char toLower(char ch)
 {
     if ((ch >= 'a' && ch <= 'z') || (ch >= '0' && ch <= '9'))
@@ -22,30 +21,46 @@ char toLower(char ch)
         return temp;
     }
 }
+bool isPalindrome(string str)
+{
+    int s = 0, e = str.length() - 1;
+    string temp;
+    for (int i = 0; i < str.length(); i++)
+    {
+        if (valid(str[i]))
+        {
+            temp.push_back(str[i]);
+        }
+    }
 
-void reverse(string str, int s, int e)
-{
-    while (e >= s)
+    for (int i = 0; i < temp.length(); i++)
     {
-        swap(str[s++], str[e--]);
+        temp[i] = toLower(temp[i]);
     }
-}
-void checkpali(string &str)
-{
-    int s = 0, e = 0, len = str.length() - 1;
-    while (e < len )
+    e = temp.length() - 1;
+    while (e > s)
     {
-        e = str.find(' ');
-        reverse(str, s, e);
-        s = e + 1;
-        e++;
+        if (temp[s] != temp[e])
+        {
+            return 0;
+        }
+        s++;
+        e--;
     }
+    return 1;
 }
 int main()
 {
-    string str = "my name is kartik";
-    checkpali(str);
-    cout << str << endl;
+    string str = "kartik i kiTrak";
+    bool found = isPalindrome(str);
+    if (found)
+    {
+        cout << "Its is plaimdrome" << endl;
+    }
+    else
+    {
+        cout << "It is not palimdrome" << endl;
+    }
     // // cout << toLower('a');
     return 0;
 }
