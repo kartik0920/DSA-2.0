@@ -1,32 +1,26 @@
 #include "Node.cpp"
 
-Node *getReverse(Node *head, int k)
+Node *reverseK(Node *&head, int k)
 {
-    // base condition
     if (head == NULL)
     {
         return NULL;
     }
-
-    // Changing 1 group
+    Node *prev = NULL, *curr = head, *forward;
     int cnt = 0;
-    Node *curr = head, *prev = NULL;
-    Node *forward;
-    while (curr != NULL && cnt < k)
+    while (cnt < k && curr != NULL)
     {
+        cnt++;
         forward = curr->next;
         curr->next = prev;
         prev = curr;
         curr = forward;
-        cnt++;
     }
 
-    // recursvie call
-    if (forward != NULL)
+    if (forward != NULL && cnt == k)
     {
-        head->next = getReverse(forward, k);
+        head->next = reverseK(forward, k);
     }
-
     return prev;
 }
 
@@ -43,9 +37,9 @@ int main()
     node2->next = node3;
     node3->next = node4;
     node4->next = node5;
-    int k = 3;
-    Node *ans = getReverse(head, k);
     print(head);
-    print(ans);
+    int k = 4;
+    Node *r2 = reverseK(head, k);
+    print(r2);
     return 0;
 }

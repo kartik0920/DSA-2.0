@@ -1,17 +1,71 @@
-#include "Node.cpp"
-Node *getReverse(Node *head)
+#include <iostream>
+using namespace std;
+
+class Node
 {
-    Node *curr = head, *prev = NULL;
+public:
+    int data;
+    Node *next;
+    Node(int data)
+    {
+        this->data = data;
+        this->next = NULL;
+    }
+};
+
+void print(Node *head)
+{
+    Node *temp = head;
+    while (temp != NULL)
+    {
+        cout << temp->data << ' ';
+        temp = temp->next;
+    }
+    cout << endl;
+}
+
+Node *reverse1(Node *&head)
+{
+    Node *prev = NULL, *curr = head;
     while (curr != NULL)
     {
-        Node *forward = curr->next;
+        Node *temp = curr->next;
         curr->next = prev;
         prev = curr;
-        curr = forward;
+        curr = temp;
     }
     return prev;
 }
 
+void solve(Node *&head, Node *curr, Node *prev)
+{
+    if (curr == NULL)
+    {
+        head = prev;
+        return;
+    }
+    solve(head, curr->next, curr);
+    curr->next = prev;
+}
+
+Node *reverse2(Node *&head)
+{
+    Node *prev = NULL, *curr = head;
+    solve(head, curr, prev);
+    return head;
+}
+
+Node *reverse3(Node *head)
+{
+    if (head == NULL || head->next == NULL)
+    {
+        return head;
+    }
+    Node *small = reverse3(head->next);
+    head->next->next = head;
+    head->next = NULL;
+    return small;
+}
 int main()
 {
     Node *head = new Node(0);
@@ -25,7 +79,15 @@ int main()
     node2->next = node3;
     node3->next = node4;
     node4->next = node5;
-    Node *reverse = getReverse(head);
-    print(reverse);
+
+    // Node *r1 = reverse1(head);
+    // print(r1);
+
+    // Node *r2 = reverse2(head);
+    // print(r2);
+
+    Node *r3 = reverse3(head);
+    print(r3);
+
     return 0;
 }
