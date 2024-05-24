@@ -39,4 +39,4 @@ Free free to conect me on
 
 [Linkedin](https://www.linkedin.com/in/kartik-gile/)<br>
 [Github](https://www.github.com/kartik0920)<br>
-[Gmail]("mailto:kartik0920@gmail.com")<br>
+[Gmail](mailto:kartik0920@gmail.com)<br>
