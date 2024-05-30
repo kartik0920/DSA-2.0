@@ -1,14 +1,7 @@
 #include <bits/stdc++.h>
 #include <iostream>
 using namespace std;
-void print(vector<int> arr)
-{
-    for (int i = 0; i < arr.size(); i++)
-    {
-        cout << arr[i] << ' ';
-    }
-    cout << endl;
-}
+
 vector<int> GetRight(vector<int> arr, int n)
 {
     vector<int> ans(n);
@@ -61,9 +54,54 @@ int largestRectangleArea(vector<int> h)
     }
     return area;
 }
+int maximalRectangle(vector<vector<char>> &matrix)
+{
+    vector<vector<int>> mat;
+    for (int i = 0; i < matrix.size(); i++)
+    {
+        vector<int> l;
+        vector<char> temp = matrix[i];
+        for (int j = 0; j < temp.size(); j++)
+        {
+            if (temp[j] == '0')
+            {
+                l.push_back(0);
+            }
+            else
+            {
+                l.push_back(1);
+            }
+        }
+        mat.push_back(l);
+    }
+    int n = mat.size();
+    int m = mat[0].size();
+    cout << n << "&&&" << m << endl;
+    int area = largestRectangleArea(mat[0]);
+    for (int i = 1; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            if (mat[i][j])
+            {
+                mat[i][j] = mat[i][j] + mat[i - 1][j];
+            }
+            else
+            {
+                mat[i][j] = 0;
+            }
+        }
+        int newA = largestRectangleArea(mat[i]);
+        area = max(area, newA);
+    }
+    return area;
+}
 int main()
 {
-    vector<int> heights = {4, 4, 4, 4};
-    cout << largestRectangleArea(heights) << endl;
+
+    vector<vector<char>> matrix;
+    matrix = {{'0', '0'},
+              {'0', '0'}};
+    cout << maximalRectangle(matrix) << endl;
     return 0;
 }
