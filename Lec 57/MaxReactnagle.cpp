@@ -101,7 +101,7 @@ int main()
 
     vector<vector<char>> matrix;
     matrix = {{'0', '0'},
-              {'0', '0'}};
+              {'0', '0'}};k
     cout << maximalRectangle(matrix) << endl;
     return 0;
 }
