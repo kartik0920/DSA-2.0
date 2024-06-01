@@ -16,5 +16,6 @@ int main()
     {
         cout << "number is zero";
     }
+    cout << "hello kartik" << endl;
     return 0;
 }
