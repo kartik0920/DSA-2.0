@@ -1,14 +1,14 @@
 #include "Node.cpp"
-bool search(TreeNode *root, int x)
+bool search(Node *root, int x)
 {
-    TreeNode *temp = root;
+    Node *temp = root;
     while (temp != NULL)
     {
-        if (temp->val == x)
+        if (temp->data == x)
         {
             return 1;
         }
-        else if (temp->val < x)
+        else if (temp->data < x)
         {
             temp = temp->right;
         }
