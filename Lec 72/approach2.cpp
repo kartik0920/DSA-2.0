@@ -73,24 +73,20 @@ int count(Node *head)
 
 Node *LLToBST(Node *head, int n)
 {
-    if (head == NULL)
-    {
-        return NULL;
-    }
-    if (n <= 0)
-    {
-        return NULL;
-    }
+     if (n <= 0 || head == NULL)
+        {
+            return NULL;
+        }
 
-    Node *leftpart = LLToBST(head->left, n / 2);
-    Node *root = head;
-    head->left = leftpart;
+        Node* leftPart=solve(head,n/2);
+        Node* root=new Node(head->val);
+        root->left=leftPart;
 
-    head = head->right;
+        head=head->right;
 
-    root->right = LLToBST(head, n - n / 2 - 1);
+        root->right=solve(head,n-n/2-1);
 
-    return root;
+        return root;
 }
 
 Node *Merge2BST(Node *r1, Node *r2)
