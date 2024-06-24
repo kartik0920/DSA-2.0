@@ -12,7 +12,7 @@ void ConvertBST(Node *&head, Node *root)
     root->right = head;
     if (head != NULL)
     {
-        root->left = head;
+        head->left = root;
     }
     head = root;
 
