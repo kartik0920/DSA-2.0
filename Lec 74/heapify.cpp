@@ -2,81 +2,51 @@
 #include <iostream>
 using namespace std;
 
-class Heap
+void printArr(vector<int> arr)
 {
-public:
-    int s;
-    int size;
-    int *arr;
-
-    Heap(int s)
+    for (int i = 0; i < arr.size(); i++)
     {
-        this->s = s;
-        this->arr = new int[s];
-        this->size = 0;
+        cout << arr[i] << ' ';
+    }
+    cout << endl;
+}
+
+void h2(vector<int> &arr, int i, int n)
+{
+    int largest = i;
+    int leftchild = i * 2 + 1;
+    int rightchild = leftchild + 1;
+
+    if (leftchild < n && arr[largest] < arr[leftchild])
+    {
+        largest = leftchild;
+    }
+    if (rightchild < n && arr[largest] < arr[rightchild])
+    {
+        largest = rightchild;
     }
 
-    void print()
+    if (largest != i)
     {
-        cout << "Here is headp" << endl;
-        for (int i = 1; i <= size; i++)
-        {
-            cout << arr[i] << ' ';
-        }
-        cout << endl;
+        swap(arr[largest], arr[i]);
+        h2(arr, largest, n);
     }
-    void insert(int d)
+}
+
+void solve(vector<int> &arr)
+{
+    int n = arr.size();
+
+    for (int i = n / 2; i > 0; i--)
     {
-        size++;
-        int index = size;
-        arr[index] = d;
-
-        while (index > 1)
-        {
-            int ParentIndex = index / 2;
-            if (arr[ParentIndex] < arr[index])
-            {
-                swap(arr[ParentIndex], arr[index]);
-                index = ParentIndex;
-            }
-            else
-            {
-                return;
-            }
-        }
+        h2(arr, i, n);
     }
+}
 
-    void deleteVal()
-    {
-        if (size == 0)
-        {
-            cout << "Empty Heap" << endl;
-            return;
-        }
-        arr[1] = arr[size--];
-        int index = 1;
-        while (index < size)
-        {
-            int leftchild = index * 2;
-            int rightchild = leftchild + 1;
-
-            if (leftchild < size && arr[leftchild] > arr[index])
-            {
-                swap(arr[leftchild], arr[index]);
-                index = leftchild;
-            }
-            else if (rightchild < size && arr[rightchild] > arr[index])
-            {
-                swap(arr[rightchild], arr[index]);
-                index = rightchild;
-            }
-            else
-            {
-                return;
-            }
-        }
-    }
-};
 int main()
 {
+    vector<int> arr = {12, 3, 5, 1, 5, 6};
+
+    solve(arr);
+    printArr(arr);
 }
