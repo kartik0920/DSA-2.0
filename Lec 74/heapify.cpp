@@ -37,16 +37,30 @@ void solve(vector<int> &arr)
 {
     int n = arr.size();
 
-    for (int i = n / 2; i > 0; i--)
+    for (int i = (n / 2) - 1; i >= 0; i--)
     {
-        h2(arr, i, n);
+        h2(arr, i, n - 1);
+    }
+}
+
+void HeapSort(vector<int> &arr, int size)
+{
+    solve(arr);
+
+    for (int i = size - 1; i >= 0; i--)
+    {
+        swap(arr[i], arr[0]);
+        h2(arr, 0, i);
     }
 }
 
 int main()
 {
-    vector<int> arr = {12, 3, 5, 1, 5, 6};
+    vector<int> arr = {6, 5, 4, 3, 2, 1};
 
     solve(arr);
+    printArr(arr);
+
+    HeapSort(arr, arr.size());
     printArr(arr);
 }
