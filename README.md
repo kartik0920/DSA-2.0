@@ -31,7 +31,7 @@ Contributors names and contact info
 
 ## Acknowledgments
 
-- I would like to thanks [Love Babbar](https://github.com/loveBabbar) for making such Good course on and providing it free to the people . This is literally one of the best DSA course. I think you should check this course as well. Course link is provided above.
+- I would like to thanks [Love Babbar](https://github.com/loveBabbar) for making such Good course on and providing it free to the people . This is literally one of the best DSA course. I think you should check this course as well. Course link is provided above in Description.
 
 ## Help
 
