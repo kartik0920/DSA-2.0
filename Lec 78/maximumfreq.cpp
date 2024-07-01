@@ -21,5 +21,6 @@ int main()
 {
     vector<int> arr = {1, 2, 2, 3, 4, 5, 5};
     cout << "Maximum Frequency is of " << MaxFreq(arr) << endl;
+
     return 0;
 }
