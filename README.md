@@ -27,7 +27,7 @@ g++ "filename.cpp" -o "filename"
 
 Contributors names and contact info
 
-[@Kartik Gile](github.com/kartik0920)
+[@Kartik Gile](https://github.com/kartik0920)
 
 ## Acknowledgments
 
