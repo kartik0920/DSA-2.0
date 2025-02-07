@@ -10,6 +10,7 @@ void printArr(vector<int> arr)
     }
     cout << endl;
 }
+
 // 0 is for directed graph anf 1 is for undirected
 class Graph
 {
