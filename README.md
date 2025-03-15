@@ -15,7 +15,7 @@ Link :https://youtube.com/playlist?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA&si=4B
 
 ### Executing program
 
-- Run the C++ file in terminal
+- Runs the C++ file in terminal
 - Go the codes location in Terminal and use the follwing command lines to execute.
 
 ```
