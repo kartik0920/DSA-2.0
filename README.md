@@ -11,7 +11,7 @@ Link :https://youtube.com/playlist?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA&si=4B
 
 ### Dependencies
 
-- Requires only C++ compiler and IDE like Vs code.
+- Requires only C++ compiler and IDE like Vs code-editor.
 
 ### Executing program
 
