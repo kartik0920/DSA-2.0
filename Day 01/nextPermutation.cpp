@@ -18,7 +18,7 @@ void nextPermutation(vector<int> &nums)
     // step 1 finding index
     for (int i = n - 2; i >= 0; i--)
     {
-        if (nums[i] <= nums[i + 1])
+        if (nums[i] < nums[i + 1])
         {
             index = i;
             break;
