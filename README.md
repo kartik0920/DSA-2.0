@@ -4,7 +4,7 @@ Codes of DSA
 
 ## Descr iption
 
-This repo consist of the codes in C++. This codes are the solution to various DSA question. This codes are based on the work-flow of Love Babbar DSA course. This is a Free DSA course available on Youtube<br><br>
+This repo consist of the codes in C++. This codes are the solution to various DSA questions. This codes are based on the work-flow of Love Babbar DSA course. This is a Free DSA course available on Youtube<br><br>
 Link :https://youtube.com/playlist?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA&si=4Bod34WM74FZJD08
 
 ## Getting Started
