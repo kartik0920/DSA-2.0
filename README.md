@@ -4,14 +4,14 @@ Codes of DSA
 
 ## Descr iption
 
-This repo consist of the codes in C++. This codes are the solution to various DSA questions. This codes are based on the work-flow of Love Babbar DSA course. This is a Free DSA course available on Youtube<br><br>
-Link :https://youtube.com/playlist?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA&si=4Bod34WM74FZJD08
+This repo consist of the codes in C++. These codes are the solution to various DSA questions. These codes are based on the workflow of Love Babbar DSA course. This is a Free DSA course available on YouTube <br><br>
+Link:https://youtube.com/playlist?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA&si=4Bod34WM74FZJD08
 
 ## Getting Started
 
 ### Dependencies
 
-- Requires only C++ compiler and IDE like Vs code-editor.
+- Requires only a C++ compiler and an IDE like VS Code editor.
 
 ### Executing program
 
